@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Current date and time: $(date)"
+echo "Registered users:"
+cut -d: -f1 /etc/passwd
+echo "System uptime:"
+uptime
+
+# сохраняем все в файл
+echo "Saving output to file..."
+{
+  echo "Current date and time: $(date)"
+  echo "Registered users:"
+  cut -d: -f1 /etc/passwd
+  echo "System uptime:"
+  uptime
+} > system_info.txt
+
+echo "Done."

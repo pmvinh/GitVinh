@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "Enter directory path: " dir_path
+
+if [ -d "$dir_path" ]; then
+  echo "Size of directory $dir_path:"
+  du -sh "$dir_path"
+else
+  echo "Directory does not exist."
+fi

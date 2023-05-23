@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "Enter file path: " file_path
+
+if [ -f "$file_path" ]; then
+  echo "File contents:"
+  while read line; do
+    echo "$line"
+  done < "$file_path"
+else
+  echo "File does not exist."
+fi
